@@ -1,15 +1,15 @@
-div.app.dark .country-item {
+.dark .country-item {
     background: var(--dm-elements-dark-blue);
     color: var(--dm-text-lm-elements-white);
 }
 
-div.app.light .country-item {
+.light .country-item {
     background: var(--dm-text-lm-elements-white);
     color: var(--lm-text-very-dark-blue);
 }
 
-.country-item {
-    background: white;
+.text-wrapper {
+    margin: 25px;
 }
 
 .country-item h1 {
@@ -33,7 +33,7 @@ div.app.light .country-item {
 .country-item ul li span {
     font-style: normal;
     font-size: .875rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
 }
 
 span.key {
@@ -41,6 +41,7 @@ span.key {
 }
 
 span.value {
+    padding-left: .5rem;
     font-weight: 300;
 }
 
@@ -48,6 +49,7 @@ span.value {
 .country-item img {
     width: 265px;
     height: 160px;
+    object-fit: cover;
 }
 
 /* } */

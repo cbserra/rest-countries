@@ -1,6 +1,11 @@
-div.app.dark header {
+.dark header {
   background: var(--dm-elements-dark-blue);
   color: var(--dm-text-lm-elements-white);
+}
+
+.light header {
+  background: var(--dm-text-lm-elements-white);
+  color: var(--lm-text-very-dark-blue);
 }
 
 header {
@@ -8,24 +13,20 @@ header {
   align-items: center;
   justify-content: space-evenly;
   height: 5rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   width: 100%;
 }
 
 header h1 {
-  font-size: 1.5rem;
   font-weight: 800;
   margin-right: auto;
   margin-left: 10%;
-  line-height: 2rem;
 }
 
 div.dark-light-toggle {
-  font-size: 1rem;
   font-weight: 600;
   margin-left: auto;
   margin-right: 10%;
-  line-height: 1.375rem;
 }
 
 div.dark-light-toggle span {
@@ -37,9 +38,9 @@ div.dark-light-toggle span i {
   margin: 10px;
 }
 
-div.dark-light-toggle span:hover {
+/* div.dark-light-toggle span:hover {
   text-shadow: 2px 2px 10px var(--lm-text-very-dark-blue);
-}
+} */
 
 div.dark-light-toggle span.dark-mode {
   order: 3;
@@ -54,9 +55,33 @@ div.dark-light-toggle span.system-mode {
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+
+@media (min-width: 701px) {
+  header h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  div.dark-light-toggle {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+}
+
+@media (max-width: 700px) {
+  header h1 {
+    font-size: .875rem;
+    line-height: 1.25rem;
+  }
+
+  div.dark-light-toggle {
+    font-size: .75rem;
+    line-height: 1rem;
+  }
 }

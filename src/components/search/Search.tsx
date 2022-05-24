@@ -4,8 +4,9 @@ import Select, { components, ControlProps } from 'react-select'
 import { DropdownIndicator } from 'react-select/dist/declarations/src/components/indicators'
 import './Search.css'
 import searchIcon from '../../images/magnifying-glass-solid.svg'
+import { CountryOption } from '../../Country'
 
-const Search = (props : {countryNames: string[]}) => {
+const Search = (props : {countryNames: CountryOption[], setSelectedCountry: any}) => {
 //     return (
 //         <div className='search-container'>
 //             <input list='countries' className='search' type='text' placeholder='Search for a country…' />
@@ -62,19 +63,26 @@ const customStyles = {
         </components.Control>
     }
 
-    const GoodSelect = (props: any): JSX.Element => <Select {...props} isClearable={true} className='country-name-search' options={options} styles={customStyles} classNamePrefix='search' placeholder='Search for a country…'
-      components={{ Control, DropdownIndicator: () => null, IndicatorSeparator: () => null }} />
+    // const GoodSelect = (props: any): JSX.Element => <Select {...props} isClearable={true} className='country-name-search' options={options} styles={customStyles} classNamePrefix='search' placeholder='Search for a country…'
+    //   components={{ Control, DropdownIndicator: () => null, IndicatorSeparator: () => null }} />
 
 
 
     const countryNames = props.countryNames
-    const options = countryNames.map((name) => {
-        return {'value': name.toLowerCase(), 'label': name}
-    })
+    // const options = countryNames.map((name) => {
+    //     return {'value': name.toLowerCase(), 'label': name}
+    // })
     return (
         // <GoodSelect />
-        <Select isClearable={true} className='country-name-search' options={options} styles={customStyles} classNamePrefix='search' placeholder='Search for a country…' 
+        <Select 
+            isClearable={true} 
+            className='country-name-search' 
+            options={props.countryNames} 
+            // styles={customStyles} 
+            classNamePrefix='search' 
+            placeholder='Search for a country…' 
             components={{ Control, DropdownIndicator:() => null, IndicatorSeparator:() => null }}
+            onChange={value => props.setSelectedCountry(value.value)}
         />
     )
 }

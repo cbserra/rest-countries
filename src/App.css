@@ -1,9 +1,9 @@
-.app.light {
+.light {
   --color: var(--lm-text-very-dark-blue);
   --background: var(--lm-bg-very-light-gray);
 }
 
-.app.dark {
+.dark {
   --color: var(--dm-text-lm-elements-white);
   --background: var(--dm-bg-very-dark-blue);
 }

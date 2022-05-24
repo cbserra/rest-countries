@@ -1,9 +1,96 @@
+/* Dark/Light Mode Styles */
+.dark .filter-dropdown {
+    background: var(--dm-elements-dark-blue);
+    color: var(--dm-text-lm-elements-white);
+}
+
+.light .filter-dropdown {
+    background: var(--lm-);
+    color: var(--lm-text-very-dark-blue);
+}
+
+.light .filter-dropdown__option.filter-dropdown__option--is-focused.css-1n7v3ny-option {
+    background-color: var(--lm-bg-very-light-gray);
+}
+
+/* Initial Styles */
 .filter-dropdown {
     width: 12.5rem;
-    /* height: 3.5rem; */
-    background: var(--dm-text-lm-elements-white);
     box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
     border-radius: 5px;
-    margin-left: auto;
-    margin-right: 8.5rem;
+}
+
+.filter-dropdown__control.css-1s2u09g-control {
+    border: unset;
+}
+
+.filter-dropdown__control.filter-dropdown__control--is-focused.filter-dropdown__control--menu-is-open {
+    border: unset;
+    box-shadow: unset;
+}
+
+.filter-dropdown__single-value.css-qc6sy-singleValue,
+.filter-dropdown__placeholder.css-14el2xx-placeholder {
+    text-align: left;
+    color: inherit;
+}
+
+.filter-dropdown__control.filter-dropdown__control--is-focused.css-1pahdxg-control {
+    box-shadow: unset;
+    border: unset;
+}
+
+/* Dropdown Menu */
+.filter-dropdown__menu.css-26l3qy-menu {
+    box-shadow: unset;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.filter-dropdown__menu {}
+
+.filter-dropdown__menu-list {
+    text-align: left;
+}
+
+.filter-dropdown__option.filter-dropdown__option--is-focused.css-1n7v3ny-option {
+    background-color: var(--lm-bg-very-light-gray);
+    padding: 4px 12px;
+}
+
+.filter-dropdown__option.css-yt9ioa-option {
+    padding: 4px 12px;
+}
+
+/* .light .filter-dropdown::placeholder {
+    color: var(--lm-input-dark-gray);
+} */
+
+/* View Dependent  */
+@media (max-width: 700px) {
+    .filter-dropdown {
+        height: 3rem;
+        margin-left: auto;
+        margin-right: 8.5rem;
+        font-size: .75rem;
+        line-height: 1.25rem
+    }
+
+    .filter-dropdown__control {
+        height: 3rem;
+    }
+}
+
+@media (min-width: 701px) {
+    .filter-dropdown {
+        height: 3.5rem;
+        margin-left: auto;
+        margin-right: 8.5rem;
+        font-size: .875rem;
+        line-height: 1.25rem
+    }
+
+    .filter-dropdown__control {
+        height: 3.5rem;
+    }
 }

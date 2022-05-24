@@ -1,14 +1,16 @@
-div.app.dark main {
-    background: var(--dm-bg-very-dark-blue);
-    color: var(--dm-text-lm-elements-white);
+.dark {
+    --background: var(--dm-bg-very-dark-blue);
+    --color: var(--dm-text-lm-elements-white);
 }
 
-div.app.light main {
-    background: var(--dm-text-lm-elements-white);
-    color: var(--lm-text-very-dark-blue);
+.light {
+    --background: var(--lm-bg-very-light-gray);
+    --color: var(--lm-text-very-dark-blue);
 }
 
 main {
+    background: var(--background);
+    color: var(--color);
     display: flex;
     align-items: center;
     justify-content: center;

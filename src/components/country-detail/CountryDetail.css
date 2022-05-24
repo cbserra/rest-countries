@@ -1,0 +1,141 @@
+.light .country-detail-container button {
+    background: var(--dm-text-lm-elements-white);
+}
+
+.dark .country-detail-container button {
+    background: var(--dm-bg-very-dark-blue);
+}
+
+.country-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.country-detail-container button {
+    margin-top: 25px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 136px;
+    height: 40px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+}
+
+.country-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country-detail-text h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 2.75rem;
+    text-align: left;
+}
+
+.country-detail-text ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.country-detail-text ul li {
+    text-align: left;
+}
+
+.country-detail-text span {
+    font-style: normal;
+    font-size: .875rem;
+    line-height: 1.5rem;
+}
+
+span.key {
+    font-weight: 600;
+}
+
+span.value,
+span.border-value {
+    padding-left: .5rem;
+    font-weight: 300;
+}
+
+span.border-value {
+    display: inline-block;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+    border-radius: 2px;
+    min-width: 6rem;
+    margin: 5px;
+}
+
+@media (min-width: 701px) {
+    .header {
+        grid-area: header;
+    }
+
+    .left {
+        grid-area: left;
+    }
+
+    .right {
+        grid-area: right;
+    }
+
+    .borders {
+        grid-area: borders;
+    }
+
+    .country-detail-text {
+        /* display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: start;
+        align-content: center; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0px 0px;
+        grid-template-areas:
+            "header header"
+            "left right"
+            "borders borders";
+    }
+
+    .country-detail-flag img {
+        width: 35rem;
+        height: 25rem;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .country-detail-container button {
+        margin-top: 40px;
+        margin-right: auto;
+        margin-bottom: 25px;
+        width: 8.5rem;
+        height: 2.5rem;
+        font-style: normal;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        color: #111517;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+        border-radius: 2px;
+    }
+
+    .country-detail {
+        flex-direction: column;
+    }
+
+    .country-detail-flag img {
+        width: 20rem;
+        height: 14.5rem;
+        object-fit: cover;
+    }
+
+}

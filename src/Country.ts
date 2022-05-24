@@ -7,6 +7,7 @@ export interface Country {
     "capital": string,
     "altSpellings": string[],
     "region": string,
+    "subregion"?: string,
     "continent": string,
     "population": number,
     "latlng": [
@@ -69,4 +70,9 @@ export interface Country {
     ],
     "cioc": string,
     "independent": boolean
+}
+
+export type CountryOption = {
+    value: Country,
+    label: string
 }

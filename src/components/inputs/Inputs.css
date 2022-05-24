@@ -24,8 +24,14 @@
         flex-direction: column;
     }
 
-    .inputs-search {}
+    .inputs-search {
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
 
-    .inputs-filter {}
+    .inputs-filter {
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
 
 }
