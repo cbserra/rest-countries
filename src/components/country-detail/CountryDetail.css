@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-inline: 15px;
+    padding-inline: 25px;
 }
 
 .country-detail {
@@ -74,13 +74,17 @@ span.border-value {
 
 @media (min-width: 701px) {
 
+    .country-detail-container {
+        width: 95%;
+    }
+
     .country-detail-flag {
         margin-right: auto;
     }
 
     .country-detail-flag img {
-        font-size: 2rem;
-        line-height: 2.75rem;
+        width: 35rem;
+        height: 25rem;
         object-fit: cover;
     }
 
@@ -109,11 +113,12 @@ span.border-value {
             "header header"
             "left right"
             "borders borders";
+        margin-left: auto;
     }
 
     .country-detail-text h1 {
-        font-size: 1.375rem;
-        line-height: 1.875rem;
+        font-size: 2rem;
+        line-height: 2.75rem;
     }
 }
 

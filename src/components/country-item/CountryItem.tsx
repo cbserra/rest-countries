@@ -12,7 +12,7 @@ const CountryItem = (props: {country: Country, setSelectedCountry: any}) => {
                 <ul>
                     <li>
                         <span className='key'>Population:</span>
-                        <span className='value'>{country.population}</span>
+                        <span className='value'>{country.population.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span>
                     </li>
                     <li>
                         <span className='key'>Region:</span>

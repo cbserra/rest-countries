@@ -54,7 +54,6 @@ const Main  = () => {
     }, [filteredCountries])
 
     useEffect(() => {
-        console.log(`filteredRegion = ${JSON.stringify(filteredRegion)}`)
         if (filteredRegion) {
             setFilteredCountries(countries.filter(country => country.region === filteredRegion))
         } else {
@@ -87,9 +86,6 @@ const Main  = () => {
                     setSelectedCountry={setSelectedCountry}
                 />
             )}
-            {/* <p>{JSON.stringify(countries)}</p>
-
-            <p>{JSON.stringify(countryNames)}</p> */}
         </main>
     )
 }

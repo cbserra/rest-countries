@@ -23,26 +23,13 @@ header h1 {
   margin-left: 10%;
 }
 
-div.dark-light-toggle {
-  font-weight: 600;
-  margin-left: auto;
-  margin-right: 10%;
-}
 
-div.dark-light-toggle span {
-  cursor: pointer;
-  margin: 10px;
-}
-
-div.dark-light-toggle span i {
-  margin: 10px;
-}
 
 /* div.dark-light-toggle span:hover {
   text-shadow: 2px 2px 10px var(--lm-text-very-dark-blue);
 } */
 
-div.dark-light-toggle span.dark-mode {
+/* div.dark-light-toggle span.dark-mode {
   order: 3;
 }
 
@@ -60,12 +47,13 @@ div.dark-light-toggle span.system-mode {
 
 .hide {
   display: none;
-}
+} */
 
 @media (min-width: 701px) {
   header h1 {
     font-size: 1.5rem;
     line-height: 2rem;
+    margin-left: 4rem;
   }
 
   div.dark-light-toggle {

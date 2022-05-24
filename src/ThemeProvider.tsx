@@ -3,9 +3,9 @@ import React, { createContext, useEffect, useState } from "react";
 const localStorageKey = "mode";
 
 // Saved mode
-type Mode = "light" | "dark" | "system";
+export type Mode = "light" | "dark" | "system";
 // Visual themes
-type Theme = "light" | "dark";
+export type Theme = "light" | "dark";
 
 // Emulate backend calls
 const getMode = (): Promise<Mode> =>
@@ -32,7 +32,6 @@ export const ThemeContext = createContext<{
 interface Props {
   children: JSX.Element
 }
-
 
 export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => {
   const [mode, setMode] = useState<Mode>(() => {

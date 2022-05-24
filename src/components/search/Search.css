@@ -1,10 +1,3 @@
-/* --dm-elements-dark-blue: hsl(209, 23%, 22%);
---dm-bg-very-dark-blue: hsl(207, 26%, 17%);
---lm-text-very-dark-blue: hsl(200, 15%, 8%);
---lm-input-dark-gray: hsl(0, 0%, 52%);
---lm-bg-very-light-gray: hsl(0, 0%, 98%);
---dm-text-lm-elements-white: hsl(0, 0%, 100%); */
-
 /* Dark/Light Mode Styles */
 .dark .country-name-search,
 .dark .search__control.css-1s2u09g-control,
@@ -27,12 +20,12 @@
 }
 
 .light .country-name-search {
-  background: var(--lm-bg-very-light-gray);
+  background: var(--dm-text-lm-elements-white);
   color: var(--lm-text-very-dark-blue);
 }
 
 .light .search__option.search__option--is-focused.css-1n7v3ny-option {
-  background-color: var(--lm-bg-very-light-gray);
+  background: var(--lm-bg-very-light-gray);
 }
 
 .light .search__placeholder.css-14el2xx-placeholder,
@@ -52,8 +45,12 @@
 }
 
 .search__single-value.css-qc6sy-singleValue,
-.search__placeholder.css-14el2xx-placeholder {
+.search__placeholder.css-14el2xx-placeholder,
+.search__input-container.css-6j8wv5-Input,
+#react-select-3-input.search__input {
   text-align: left;
+  font-size: .875rem;
+  line-height: 1.25rem;
   color: inherit;
 }
 
@@ -81,42 +78,11 @@
   padding: 4px 12px;
 }
 
-/* 
-View Dependent 
-@media (max-width: 700px) {
-  .filter-dropdown {
-    height: 3rem;
-    margin-left: auto;
-    margin-right: 8.5rem;
-    font-size: .75rem;
-    line-height: 1.25rem
-  }
-
-  .filter-dropdown__control {
-    height: 3rem;
-  }
-}
-
-@media (min-width: 701px) {
-  .filter-dropdown {
-    height: 3.5rem;
-    margin-left: auto;
-    margin-right: 8.5rem;
-    font-size: .875rem;
-    line-height: 1.25rem
-  }
-
-  .filter-dropdown__control {
-    height: 3.5rem;
-  }
-} */
-
 .country-name-search {
-  width: 21rem;
-  height: 3rem;
   font-weight: 400;
-  font-size: .75rem;
   line-height: 1.25rem;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
 }
 
 .search__control {
@@ -139,14 +105,25 @@ View Dependent
   font-size: .75rem;
 }
 
-@media (max-width: 700px) {
+/* View Depedent */
+@media (min-width: 900px) {
+  .country-name-search {
+    width: 30rem;
+    height: 3.5rem;
+    font-size: .875rem;
+  }
+
+  .search__control.search__control--is-focused.css-1pahdxg-control,
+  .search__control.css-1s2u09g-control {
+    height: 3.5rem;
+  }
+
+}
+
+@media (max-width: 899) {
   .country-name-search {
     width: 21rem;
     height: 3rem;
-    font-weight: 400;
     font-size: .75rem;
-    line-height: 1.25rem;
-    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-    border-radius: 5px;
   }
 }

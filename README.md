@@ -31,13 +31,55 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)*
 
-### Screenshot
+### Screenshots
 
 #### Mobile
 
-##### Light
+<details>
+  <summary>Light</summary>
+  <img src="./screenshot-mobile-light.png" />
+</details>
 
-![screenshot-mobile-light](./screenshot-mobile-light.png)
+<details>
+  <summary>Dark</summary>
+  <img src="./screenshot-mobile-dark.png" />
+</details>
+
+#### Tablet-ish (2 columns)
+
+<details>
+  <summary>Light</summary>
+  <img src="./screenshot-tab1-light.png" />
+</details>
+
+<details>
+  <summary>Dark</summary>
+  <img src="./screenshot-tab1-dark.png" />
+</details>
+
+#### Tablet-ish (3 columns)
+
+<details>
+  <summary>Light</summary>
+  <img src="./screenshot-tab2-light.png" />
+</details>
+
+<details>
+  <summary>Dark</summary>
+  <img src="./screenshot-tab2-dark.png" />
+</details>
+
+#### Desktop
+
+<details>
+  <summary>Light</summary>
+  <img src="./screenshot-desktop-light.png" />
+</details>
+
+<details>
+  <summary>Dark</summary>
+  <img src="./screenshot-desktop-dark.png" />
+</details>
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
