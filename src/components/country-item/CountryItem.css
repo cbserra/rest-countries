@@ -12,6 +12,12 @@
     margin: 25px;
 }
 
+.country-item img {
+    border-radius: 5px;
+    border: 1px solid var(--lm-text-very-dark-blue);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 .country-item h1 {
     font-style: normal;
     font-weight: 800;

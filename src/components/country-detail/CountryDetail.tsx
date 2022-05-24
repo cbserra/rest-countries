@@ -1,4 +1,5 @@
 import { Country } from '../../Country'
+import BackButton from '../back-button/BackButton'
 import './CountryDetail.css'
 
 const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaNames: Record<string, string>}) => {
@@ -7,13 +8,9 @@ const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaN
     console.log(props.alphaNames)
     return (
         <div className='country-detail-container'>
-            <button 
-                className='back-button' 
-                onClick={() => props.setSelectedCountry(undefined)}
-            >
-                <i className="fa-solid fa-arrow-left-long"></i>
-                Back
-            </button>
+            <BackButton 
+                setSelectedCountry={props.setSelectedCountry} 
+            />
             <div className='country-detail'>
                 <div className='country-detail-flag'>
                     <img src={country.flag} alt='flag' />
@@ -57,19 +54,21 @@ const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaN
                             </li>
                             <li>
                                 <span className='key'>Currencies:</span>
-                                <span className='value'>{country.currencies?.map(currency => currency.name).join(',')}</span>
+                                <span className='value'>{country.currencies?.map(currency => currency.name).join(', ')}</span>
                             </li>
                             <li>
                                 <span className='key'>Languages:</span>
-                                <span className='value'>{country.languages?.map(language => language.name).join(',')}</span>
+                                <span className='value'>{country.languages?.map(language => language.name).join(', ')}</span>
                             </li>
                         </ul>
                     </div>
                     
-                    <div className='borders'>
-                        <span className='key'>Border Countries:</span>
-                        {country.borders?.map((border, index) => <span key={index} className='border-value'>{props.alphaNames[border]}</span>)}
-                    </div>
+                    {country.borders?.length > 0 && (
+                        <div className='borders'>
+                            <h2>Border Countries:</h2>
+                            {country.borders?.map((border, index) => <span key={index} className='border-value'>{props.alphaNames[border]}</span>)}
+                        </div>
+                    )}
                 </div>
 
             </div>

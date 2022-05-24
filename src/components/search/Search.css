@@ -6,13 +6,28 @@
 --dm-text-lm-elements-white: hsl(0, 0%, 100%); */
 
 /* Dark/Light Mode Styles */
-.dark .country-name-search {
+.dark .country-name-search,
+.dark .search__control.css-1s2u09g-control,
+.dark .search__control.search__control--is-focused.css-1pahdxg-control,
+.dark .search__control.search__control--is-focused.search__control--menu-is-open.css-1pahdxg-control,
+.dark .search__option.search__option--is-focused.css-1n7v3ny-option,
+.dark .search__menu.css-26l3qy-menu {
   background: var(--dm-elements-dark-blue);
   color: var(--dm-text-lm-elements-white);
 }
 
+.dark .search__option.search__option--is-focused.css-1n7v3ny-option {
+  background-color: var(--dm-bg-very-dark-blue);
+}
+
+.dark .search__placeholder.css-14el2xx-placeholder,
+.dark .country-name-search::placeholder,
+.dark .search__control i {
+  color: var(--dm-text-lm-elements-white);
+}
+
 .light .country-name-search {
-  background: var(--lm-);
+  background: var(--lm-bg-very-light-gray);
   color: var(--lm-text-very-dark-blue);
 }
 
@@ -20,12 +35,13 @@
   background-color: var(--lm-bg-very-light-gray);
 }
 
-.light .search__placeholder.css-14el2xx-placeholder {
+.light .search__placeholder.css-14el2xx-placeholder,
+.light .country-name-search::placeholder,
+.light .search__control i {
   color: var(--lm-input-dark-gray);
 }
 
 /* Initial Styles */
-
 .search__control.css-1s2u09g-control {
   border: unset;
 }
@@ -52,7 +68,6 @@
   margin-top: 4px;
   margin-bottom: 4px;
 }
-
 
 .search__menu-list {
   text-align: left;
@@ -102,23 +117,6 @@ View Dependent
   font-weight: 400;
   font-size: .75rem;
   line-height: 1.25rem;
-}
-
-.dark .country-name-search {
-  background: var(--dm-elements-dark-blue);
-  color: var(--dm-text-lm-elements-white);
-}
-
-.light .country-name-search {
-
-  background: var(--dm-text-lm-elements-white);
-  color: var(--lm-text-very-dark-blue);
-
-}
-
-.light .country-name-search::placeholder,
-.search__control i {
-  color: var(--lm-input-dark-gray);
 }
 
 .search__control {

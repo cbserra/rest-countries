@@ -1,21 +1,9 @@
-import { useCombobox } from 'downshift'
-import { useState } from 'react'
 import Select, { components, ControlProps } from 'react-select'
-import { DropdownIndicator } from 'react-select/dist/declarations/src/components/indicators'
 import './Search.css'
-import searchIcon from '../../images/magnifying-glass-solid.svg'
 import { CountryOption } from '../../Country'
 
 const Search = (props : {countryNames: CountryOption[], setSelectedCountry: any}) => {
-//     return (
-//         <div className='search-container'>
-//             <input list='countries' className='search' type='text' placeholder='Search for a country…' />
-//             <datalist id='countries'>
-//                 {props.countryNames.map((name, index) => <option key={index} value={name} />)}
-//             </datalist>
-//         </div>
-//     )
-// }
+
 const customStyles = {
     menu: (provided: any) => ({
       ...provided,
@@ -86,58 +74,5 @@ const customStyles = {
         />
     )
 }
-
-// const [inputItems, setInputItems] = useState(countryNames)
-//     const {
-//       isOpen,
-//       getToggleButtonProps,
-//       getLabelProps,
-//       getMenuProps,
-//       getInputProps,
-//       getComboboxProps,
-//       highlightedIndex,
-//       getItemProps,
-//     } = useCombobox({
-//       items: inputItems,
-//       onInputValueChange: ({ inputValue }) => {
-//         setInputItems(
-//           countryNames.filter(item =>
-//             item.toLowerCase().startsWith(inputValue!.toLowerCase()),
-//           ),
-//         )
-//       },
-//     })
-//     return (
-//       <div>
-//         <label {...getLabelProps()}>Choose an element:</label>
-//         <div {...getComboboxProps()}>
-//           <input {...getInputProps()} />
-//           <button
-//             type="button"
-//             {...getToggleButtonProps()}
-//             aria-label="toggle menu"
-//           >
-//             &#8595;
-//           </button>
-//         </div>
-//         <ul {...getMenuProps()}>
-//           {isOpen &&
-//             inputItems.map((item, index) => (
-//               <li
-//                 style={
-//                   highlightedIndex === index
-//                     ? { backgroundColor: '#bde4ff' }
-//                     : {}
-//                 }
-//                 key={`${item}${index}`}
-//                 {...getItemProps({ item, index })}
-//               >
-//                 {item}
-//               </li>
-//             ))}
-//         </ul>
-//       </div>
-//     )
-//   }
 
 export default Search

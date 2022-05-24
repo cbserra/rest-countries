@@ -1,0 +1,42 @@
+.light .country-detail-container button {
+    background: var(--dm-text-lm-elements-white);
+    color: var(--lm-text-very-dark-blue);
+}
+
+.dark .country-detail-container button {
+    background: var(--dm-elements-dark-blue);
+    color: var(--dm-text-lm-elements-white);
+}
+
+.country-detail-container button {
+    margin-top: 25px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border: unset;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@media (min-width: 701px) {
+    .country-detail-container button {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        width: 8.5rem;
+        height: 2.5rem;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .country-detail-container button {
+        width: 6.5rem;
+        height: 2rem;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+        border-radius: 2px;
+    }
+
+}
