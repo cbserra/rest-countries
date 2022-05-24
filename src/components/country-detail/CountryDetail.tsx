@@ -4,8 +4,8 @@ import './CountryDetail.css'
 
 const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaNames: Record<string, string>}) => {
     const country = props.country
-    console.log(country)
-    console.log(props.alphaNames)
+    const alphaNames = props.alphaNames
+
     return (
         <div className='country-detail-container'>
             <BackButton 
@@ -66,7 +66,7 @@ const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaN
                     {country.borders?.length > 0 && (
                         <div className='borders'>
                             <h2>Border Countries:</h2>
-                            {country.borders?.map((border, index) => <span key={index} className='border-value'>{props.alphaNames[border]}</span>)}
+                            {country.borders?.map((border, index) => <span key={index} className='border-value'>{alphaNames[border]}</span>)}
                         </div>
                     )}
                 </div>

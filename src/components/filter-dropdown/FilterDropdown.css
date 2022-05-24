@@ -86,8 +86,6 @@
 @media (max-width: 899px) {
     .filter-dropdown {
         height: 3rem;
-        /* margin-left: auto; */
-        /* margin-right: 8.5rem; */
         font-size: .75rem;
         line-height: 1.25rem
     }
@@ -100,8 +98,6 @@
 @media (min-width: 900px) {
     .filter-dropdown {
         height: 3.5rem;
-        /* margin-left: auto; */
-        /* margin-right: 8.5rem; */
         font-size: .875rem;
         line-height: 1.25rem
     }

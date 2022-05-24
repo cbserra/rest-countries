@@ -1,4 +1,3 @@
-import { stringify } from 'querystring'
 import { useEffect, useState } from 'react'
 import { Country, CountryOption } from '../../Country'
 import CountryDetail from '../country-detail/CountryDetail'
@@ -7,8 +6,6 @@ import Inputs from '../inputs/Inputs'
 import './Main.css'
 
 const Main  = () => {
-
-
 
     const [countries, setCountries] = useState<Country[]>([])
     const [countryNames, setCountryNames] = useState<CountryOption[]>([])
@@ -32,20 +29,13 @@ const Main  = () => {
             let regions: string[] = Array.from(new Set(countryData.map((country: { region: string }) => country.region)))
             setRegions(regions)
 
+            // Create map of 3-letter alpha names => country name for use on country details
             let alphaNames : Record<string, string> = {}
             countryData.forEach((country: Country) => { 
                 alphaNames[country.alpha3Code] = country.name 
             })
             setAlpha3ToName(alphaNames)
         })
-
-        // fetch('https://restcountries.com/v2/all?fields=region')
-        // .then(resp => resp.json())
-        // .then(data => {
-        //     setRegions(data)
-
-        //     console.log(`regions: ${JSON.stringify(regions)}`)
-        // })
     }, [])
 
     useEffect(() => {
@@ -59,7 +49,7 @@ const Main  = () => {
         } else {
             setFilteredCountries(countries)
         }
-    }, [filteredRegion])
+    }, [filteredRegion, countries])
 
     return (
         <main>

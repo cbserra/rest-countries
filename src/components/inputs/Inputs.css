@@ -1,15 +1,14 @@
+.inputs-container {
+    display: flex;
+}
+
 @media (min-width: 900px) {
 
     .inputs-container {
         width: 90%;
-        display: flex;
         align-items: flex-start;
         justify-content: space-between;
         margin-block: 50px;
-    }
-
-    .inputs-search {
-        /* margin-right: auto; */
     }
 
     .inputs-filter {
@@ -20,7 +19,6 @@
 
 @media (max-width: 899px) {
     .inputs-container {
-        display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;

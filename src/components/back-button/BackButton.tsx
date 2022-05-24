@@ -1,6 +1,7 @@
+import { Country } from '../../Country'
 import './BackButton.css'
 
-const BackButton = (props: { setSelectedCountry: (arg0: undefined) => void }) => {
+const BackButton = (props: { setSelectedCountry: (country: Country | undefined) => void }) => {
     return (
         <button 
             className='back-button' 

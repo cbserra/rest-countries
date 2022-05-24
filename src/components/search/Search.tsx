@@ -4,46 +4,47 @@ import { CountryOption } from '../../Country'
 
 const Search = (props : {countryNames: CountryOption[], setSelectedCountry: any}) => {
 
-const customStyles = {
-    menu: (provided: any) => ({
-      ...provided,
-      width: '30rem',
-      borderBottom: '1px dotted pink',
-    //   color: state.selectProps.menuColor,
-      padding: 20,
-    }),
+// May implement in future along with styled-components
+// const customStyles = {
+//     menu: (provided: any) => ({
+//       ...provided,
+//       width: '30rem',
+//       borderBottom: '1px dotted pink',
+//     //   color: state.selectProps.menuColor,
+//       padding: 20,
+//     }),
   
-    control: () => ({
-        // backgroundImage: `url(${searchIcon})`,
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: '1rem',
-        // backgroundPosition: '10% 50%',
-        width: '30rem',
-        height: '3.5rem',
-        fontWeight: 400,
-        fontSize: '.875rem',
-        lineHeight: '1.25rem',
-        boxShadow: '0px 2px 9px rgba(0, 0, 0, 0.0532439)',
-        borderRadius: '5px',
-    }),
+//     control: () => ({
+//         // backgroundImage: `url(${searchIcon})`,
+//         // backgroundRepeat: 'no-repeat',
+//         // backgroundSize: '1rem',
+//         // backgroundPosition: '10% 50%',
+//         width: '30rem',
+//         height: '3.5rem',
+//         fontWeight: 400,
+//         fontSize: '.875rem',
+//         lineHeight: '1.25rem',
+//         boxShadow: '0px 2px 9px rgba(0, 0, 0, 0.0532439)',
+//         borderRadius: '5px',
+//     }),
 
-    // container: () => ({
-    //     width: '30rem',
-    //     height: '3.5rem',
-    //     fontWeight: 400,
-    //     fontSize: '.875rem',
-    //     lineHeight: '1.25rem',
-    //     boxShadow: '0px 2px 9px rgba(0, 0, 0, 0.0532439)',
-    //     borderRadius: '5px',
-    // }),
+//     // container: () => ({
+//     //     width: '30rem',
+//     //     height: '3.5rem',
+//     //     fontWeight: 400,
+//     //     fontSize: '.875rem',
+//     //     lineHeight: '1.25rem',
+//     //     boxShadow: '0px 2px 9px rgba(0, 0, 0, 0.0532439)',
+//     //     borderRadius: '5px',
+//     // }),
 
-    singleValue: (provided: any, state: { isDisabled: any }) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
+//     singleValue: (provided: any, state: { isDisabled: any }) => {
+//       const opacity = state.isDisabled ? 0.5 : 1;
+//       const transition = 'opacity 300ms';
   
-      return { ...provided, opacity, transition };
-    }
-  }
+//       return { ...provided, opacity, transition };
+//     }
+//   }
 
     const Control = ({ children, ...props }: ControlProps<any, false>) => {
         return <components.Control {...props}>
@@ -51,17 +52,7 @@ const customStyles = {
         </components.Control>
     }
 
-    // const GoodSelect = (props: any): JSX.Element => <Select {...props} isClearable={true} className='country-name-search' options={options} styles={customStyles} classNamePrefix='search' placeholder='Search for a country…'
-    //   components={{ Control, DropdownIndicator: () => null, IndicatorSeparator: () => null }} />
-
-
-
-    const countryNames = props.countryNames
-    // const options = countryNames.map((name) => {
-    //     return {'value': name.toLowerCase(), 'label': name}
-    // })
     return (
-        // <GoodSelect />
         <Select 
             isClearable={true} 
             className='country-name-search' 
