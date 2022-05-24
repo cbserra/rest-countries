@@ -1,0 +1,16 @@
+@media (min-width: 701px) {
+
+    .country-list {
+        display: grid;
+        grid-template-columns: 16.5625rem 16.5625rem 16.5625rem;
+        grid-gap: 3rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .country-list {
+        display: grid;
+        grid-template-columns: 16.5625rem;
+        grid-gap: 3rem;
+    }
+}

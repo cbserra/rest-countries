@@ -1,0 +1,40 @@
+/* --dm-elements-dark-blue: hsl(209, 23%, 22%);
+--dm-bg-very-dark-blue: hsl(207, 26%, 17%);
+--lm-text-very-dark-blue: hsl(200, 15%, 8%);
+--lm-input-dark-gray: hsl(0, 0%, 52%);
+--lm-bg-very-light-gray: hsl(0, 0%, 98%);
+--dm-text-lm-elements-white: hsl(0, 0%, 100%); */
+
+.search__control {
+  display: flex;
+}
+
+.search__control i {
+  margin: 25px;
+}
+
+.country-name-search {
+  width: 30rem;
+  height: 3.5rem;
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+}
+
+div.app.dark main .country-name-search {
+  background: var(--dm-elements-dark-blue);
+  color: var(--dm-text-lm-elements-white);
+}
+
+div.app.light main .country-name-search {
+
+  background: var(--dm-text-lm-elements-white);
+  color: var(--lm-text-very-dark-blue);
+
+}
+
+div.app.light main .country-name-search::placeholder {
+  color: var(--lm-input-dark-gray);
+}
