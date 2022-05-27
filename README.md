@@ -29,11 +29,19 @@ sections you keep.**
 Users should be able to:
 
 - See all countries from the API on the homepage
-- Search for a country using an `input` field
-- Filter countries by region
+- Search for a country using an `input` field:
+  - **CBS Addition**: Clicking on the 'Search for a country' `input` field will display a menu,
+    listing all available countries. Upon selecting a country, the user will be
+    presented with the Country's detail page.
+- Filter countries by region:
+  - **CBS Addition**: Choosing a region will filter the Country's listed by that selected region.
+    Clearing the value will reset the view back to the original listing of all countries.
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode:
+  - **CBS Addition**: The application will check LocalStorage to see if a `mode` has been saved for the application already.
+  If not, it will check the `system`'s mode to determine if a theme has been set. A system theme will render
+  the application with that theme. If not, it will default to `light` theme.
 
 ### Screenshots
 
@@ -85,50 +93,32 @@ Users should be able to:
   <img src="./screenshot-desktop-dark.png" />
 </details>
 
-Add a screenshot of your solution. The easiest way to do this is
-to use Firefox to view your project, right-click the page and select
-"Take a Screenshot". You can choose either a full-height screenshot
-or a cropped one based on how long the page is. If it's very long, it might
-be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/)
-to take the screenshot. FireShot has a free option, so you don't need to
-purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project,
-and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot.
-If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution @ Frontend Mentor](https://www.frontendmentor.io/solutions/rest-countries-api-reactreactselectdark-themeresponsive-ui-nq8t6-r3Cb)
+- Live Site URL: [REST Countries @ Vercel](https://rest-countries-cbserra.vercel.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
+- [Create-React-App with Typescript Template](https://create-react-app.dev/docs/adding-typescript)
 - CSS custom properties
-- Flexbox
-- CSS Grid
+- [React Select](https://react-select.com/home) Library
+- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace
 the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working
-through this project. Writing these out and providing code samples of areas
-you want to highlight is a great way to reinforce your own knowledge.
+I followed a few blog posts, discussing `useContext` hook and `createContext`. Implemented following these posts/sandboxes:
 
-To see how you can add code snippets, see below:
+- [Building Dark Mode in React: The Fun Way | JavaScript Works](https://javascript.works-hub.com/learn/building-dark-mode-in-react-the-fun-way-424f6)
+- [Light/dark mode: React Implementation](https://dev.to/ayc0/light-dark-mode-react-implementation-3aoa#defining-the-context)
+  - [Code Sandbox](https://codesandbox.io/s/themes-tbclf?file=/src/theme.tsx)
 
 ```html
 <h1>Some HTML code I'm proud of</h1>

@@ -4,5 +4,8 @@
      },
      "MD033": {
       "allowed_elements" : [ "details", "summary", "img" ]
+     },
+     "line-length": {
+         "line_length": 120
      }
 }
