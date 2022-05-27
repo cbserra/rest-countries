@@ -21,10 +21,10 @@ export const ThemeContext = createContext<{
 })
 
 interface Props {
-  children: JSX.Element
+  children: React.ReactNode
 }
 
-export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => {
+export const ThemeProvider: React.FunctionComponent<Props> = ({ children }) => {
   const LS_MODE_KEY = "mode"
   const [lsMode, setLsMode] = useLocalStorage(LS_MODE_KEY, "system")
   const [mode, setMode] = useState<Mode>(() => lsMode as Mode)
@@ -87,7 +87,7 @@ export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => 
 
   return (
     <ThemeContext.Provider value={{ theme, mode, setTheme, setMode }}>
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   )
 }

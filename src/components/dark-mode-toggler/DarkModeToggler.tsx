@@ -1,5 +1,5 @@
 
-import { useTheme } from '../../ThemeProvider'
+import { useTheme } from '../../utils/ThemeProvider'
 import './DarkModeToggler.css'
 
 const DarkModeToggler = () => {

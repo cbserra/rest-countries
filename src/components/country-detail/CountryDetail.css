@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    padding-inline: 1rem;
+    padding-inline: 3rem;
 }
 
 .country-detail {
