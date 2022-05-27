@@ -36,9 +36,9 @@ const Main  = () => {
     
                 setTimeout(() => {
                     toggleIsLoading(false)
-                }, 1000)
+                }, 0)
             })
-        }, 1000)
+        }, 0)
       }, []);
 
     /**
