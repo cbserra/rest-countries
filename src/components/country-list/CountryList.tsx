@@ -2,15 +2,21 @@ import './CountryList.css'
 import {Country } from '../../utils/CountryTypes'
 import CountryItem from '../country-item/CountryItem'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Loading from '../loading/Loading'
 
 
-const CountryList = (props: {countries: Country[], setSelectedCountry: any}) => {
+const CountryList = (props: {countries: Country[], setSelectedCountry: any, loadedCountries: Country[], setLoadedCountries: any}) => {
     const countries: Country[] = props.countries
+    const loadedCountries: Country[] = props.loadedCountries
+    const setLoadedCountries: any = props.setLoadedCountries
+
+    useEffect(() => {
+        setLoadedCountries(countries.slice(0, NUM_LOAD))
+    }, [countries, setLoadedCountries])
 
     const NUM_LOAD = 20
-    const [loadedCountries, setLoadedCountries] = useState<Country[]>(countries.slice(0, NUM_LOAD))
+    // const [loadedCountries, setLoadedCountries] = useState<Country[]>(countries.slice(0, NUM_LOAD))
     const [hasMore, setHasMore] = useState<boolean>(countries.length - loadedCountries.length > 0)
     const fetchMoreData = () => {
         const numLoadedCountries = loadedCountries.length

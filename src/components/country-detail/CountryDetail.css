@@ -17,7 +17,7 @@
 .country-detail-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     padding-inline: 1rem;
 }
 
@@ -97,10 +97,10 @@ span.border-value {
     cursor: pointer;
 }
 
-@media (min-width: 701px) {
+@media (min-width: 1000px) {
 
     .country-detail-container {
-        width: 100%;
+        width: 100vw;
     }
 
     .header {

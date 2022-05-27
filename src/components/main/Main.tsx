@@ -11,6 +11,7 @@ const Main  = () => {
     const [countries, setCountries] = useState<Country[]>([])
     const [countryNames, setCountryNames] = useState<CountryOption[]>([])
     const [filteredCountries, setFilteredCountries] = useState<Country[]>([])
+    const [loadedCountries, setLoadedCountries] = useState<Country[]>([])
 
     const [regions, setRegions] = useState<string[]>([])
     const [filteredRegion, setFilteredRegion] = useState<string>()
@@ -126,6 +127,8 @@ const Main  = () => {
                     <CountryList 
                         countries={filteredCountries} 
                         setSelectedCountry={setSelectedCountry}
+                        loadedCountries={loadedCountries}
+                        setLoadedCountries={setLoadedCountries}
                     />
                 )}
             </div>
