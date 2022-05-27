@@ -3,16 +3,18 @@
     color: var(--dm-text-lm-elements-white);
 }
 
-.light .country-item {
+/* .light .country-item {
     background: var(--dm-text-lm-elements-white);
     color: var(--lm-text-very-dark-blue);
-}
+} */
 
 .text-wrapper {
     margin: 25px;
 }
 
 .country-item {
+    background: var(--dm-text-lm-elements-white);
+    color: var(--lm-text-very-dark-blue);
     padding-bottom: 25px;
     border-radius: 0 0 5px 5px;
 }

@@ -1,4 +1,6 @@
 div.dark-light-toggle {
+    font-size: .75rem;
+    line-height: 1rem;
     font-weight: 600;
     margin-left: auto;
     /* margin-right: 10%; */
@@ -33,10 +35,10 @@ span.dark-mode i.fa-moon.fa-solid {
     }
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
     div.dark-light-toggle {
         font-size: .75rem;
         line-height: 1rem;
     }
-}
+} */

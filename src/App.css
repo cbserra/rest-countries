@@ -1,7 +1,7 @@
-.light {
+/* .light {
   --color: var(--lm-text-very-dark-blue);
   --background: var(--lm-bg-very-light-gray);
-}
+} */
 
 .dark {
   --color: var(--dm-text-lm-elements-white);
@@ -9,6 +9,8 @@
 }
 
 .app {
+  color: var(--lm-text-very-dark-blue);
+  background: var(--lm-bg-very-light-gray);
   text-align: center;
   color: var(--color);
   background: var(--background);

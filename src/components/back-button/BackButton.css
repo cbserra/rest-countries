@@ -1,7 +1,7 @@
-.light .back-button {
+/* .light .back-button {
     background: var(--dm-text-lm-elements-white);
     color: var(--lm-text-very-dark-blue);
-}
+} */
 
 .dark .back-button {
     background: var(--dm-elements-dark-blue);
@@ -9,12 +9,20 @@
 }
 
 .back-button {
+    background: var(--dm-text-lm-elements-white);
+    color: var(--lm-text-very-dark-blue);
     margin-top: 1.5rem;
     margin-right: auto;
     margin-bottom: 1.5rem;
     border: unset;
     font-style: normal;
     font-weight: 300;
+    width: 6.5rem;
+    height: 2rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+    border-radius: 2px;
 }
 
 @media (min-width: 701px) {
@@ -28,7 +36,7 @@
     }
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
     .back-button {
         width: 6.5rem;
@@ -39,4 +47,4 @@
         border-radius: 2px;
     }
 
-}
+} */

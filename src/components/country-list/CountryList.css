@@ -1,6 +1,7 @@
 .country-list {
     display: grid;
     grid-gap: 5rem;
+    grid-template-columns: 16.5rem;
 }
 
 @media (min-width: 1350px) {
@@ -21,11 +22,5 @@
 
     .country-list {
         grid-template-columns: repeat(2, 16.5rem);
-    }
-}
-
-@media (max-width: 649px) {
-    .country-list {
-        grid-template-columns: 16.5rem;
     }
 }

@@ -1,4 +1,4 @@
-.light div[data-testid="three-dots-loading"]>svg {
+div[data-testid="three-dots-loading"]>svg {
     fill: var(--lm-text-very-dark-blue);
 }
 

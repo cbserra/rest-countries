@@ -6,13 +6,13 @@
     border-color: var(--dm-elements-dark-blue);
 }
 
-.light .border-value {
+/* .light .border-value {
     background: var(--dm-text-lm-elements-white);
 }
 
 .light .country-detail-flag img {
     border-color: var(--lm-input-dark-gray);
-}
+} */
 
 .country-detail-container {
     display: flex;
@@ -22,6 +22,7 @@
 }
 
 .country-detail {
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,10 +31,12 @@
 }
 
 .country-detail-flag {
-    width: 35rem;
+    width: 100%;
+    /* width: 35rem; */
 }
 
 .country-detail-flag img {
+    border-color: var(--lm-input-dark-gray);
     border-radius: 10px;
     border: 1px solid;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -43,17 +46,21 @@
 }
 
 .country-detail-text {
-    width: 35rem;
+    width: 100%;
+    /* width: 35rem; */
 }
 
 .country-detail-text h1 {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
     font-weight: 800;
     text-align: left;
 }
 
 .country-detail-text ul {
+    margin-block: 16px;
     list-style-type: none;
-    margin: 0;
+    margin-inline: 0;
     padding: 0;
 }
 
@@ -68,6 +75,7 @@
 }
 
 .country-detail-text h2 {
+    display: block;
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -88,6 +96,10 @@ span.border-value {
 }
 
 span.border-value {
+    font-size: .75rem;
+    line-height: 1rem;
+    text-align: center;
+    background: var(--dm-text-lm-elements-white);
     display: inline-block;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
     border-radius: 2px;
@@ -140,11 +152,11 @@ span.border-value {
     }
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
     .country-detail-container {
-        /* width: 90%;
-        padding: 0; */
+        width: 90%;
+        padding: 0;
     }
 
     .country-detail {
@@ -157,7 +169,7 @@ span.border-value {
 
     .country-detail-text {
         width: 100%;
-        /* margin-top: 25px; */
+        margin-top: 25px;
     }
 
     .country-detail-text h1 {
@@ -179,7 +191,7 @@ span.border-value {
         text-align: center;
     }
 
-}
+} */
 
 /* Try to fit the flag a little better over various screen widths */
 @media (min-width: 1200px) {

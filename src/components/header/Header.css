@@ -3,12 +3,9 @@
   color: var(--dm-text-lm-elements-white);
 }
 
-.light header {
+header {
   background: var(--dm-text-lm-elements-white);
   color: var(--lm-text-very-dark-blue);
-}
-
-header {
   position: relative;
   display: flex;
   align-items: center;
@@ -25,11 +22,14 @@ header {
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
+  min-width: 375px;
   width: 100%;
   padding-inline: 1rem;
 }
 
 header h1 {
+  font-size: .875rem;
+  line-height: 1.25rem;
   font-weight: 800;
 }
 
@@ -45,7 +45,7 @@ header h1 {
   }
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
   .header-width-wrapper {
     min-width: 375px;
@@ -55,4 +55,4 @@ header h1 {
     font-size: .875rem;
     line-height: 1.25rem;
   }
-}
+} */
