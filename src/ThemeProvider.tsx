@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react"
+import React, { createContext, useCallback, useEffect, useState } from "react"
 import useLocalStorage from "use-local-storage"
 
 
@@ -12,10 +12,12 @@ export const ThemeContext = createContext<{
   mode: Mode,
   theme: Theme,
   setMode: (mode: Mode) => void
+  setTheme: (theme: Theme) => void
 }>({
   mode: "system",
   theme: "light",
-  setMode: () => {}
+  setMode: () => {},
+  setTheme: () => {}
 })
 
 interface Props {
@@ -25,10 +27,15 @@ interface Props {
 export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => {
   const LS_MODE_KEY = "mode"
   const [lsMode, setLsMode] = useLocalStorage(LS_MODE_KEY, "system")
-  const [mode, setMode] = useState<Mode>(() => {
-    const initialMode = lsMode as Mode
-    return initialMode
-  })
+  const [mode, setMode] = useState<Mode>(() => lsMode as Mode)
+  
+
+  const isSystemInDarkMode = matchMedia("(prefers-color-scheme: dark)")
+  const getPreferredColorScheme = useCallback((): Theme => isSystemInDarkMode.matches ? "dark" : "light", [isSystemInDarkMode])
+
+  const [theme, setTheme] = useState<Theme>(() => mode !== "system" ? mode : getPreferredColorScheme())
+  
+
   
   // Emulate backend calls
   const getMode = (): Promise<Mode> =>
@@ -49,27 +56,17 @@ export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => 
     setLsMode(mode)
   }, [setLsMode, mode])
   
-  const isSystemInDarkMode = matchMedia("(prefers-color-scheme: dark)")
-  const getPreferredColorScheme = (): Theme => {
-    return isSystemInDarkMode.matches ? "dark" : "light"
-  }
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (mode !== "system") {
-      return mode
-    }
-    
-    return getPreferredColorScheme()
-  })
+
 
   // Update the theme according to the mode
   useEffect(() => {
-    if (mode !== "system") {
-      setTheme(mode)
-      return
-    }
+    // if (mode !== "system") {
+    //   setTheme(mode)
+    //   return
+    // }
 
-    // If system mode, immediately change theme according to the current system value
-    setTheme(getPreferredColorScheme())
+    // // If system mode, immediately change theme according to the current system value
+    // setTheme(getPreferredColorScheme())
 
     // As the system value can change, we define an event listener when in system mode
     // to track down its changes
@@ -80,7 +77,7 @@ export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => 
     return () => {
       isSystemInDarkMode.removeEventListener('change', listener)
     }
-  }, [mode, getPreferredColorScheme, isSystemInDarkMode])
+  }, [isSystemInDarkMode])
 
   // Update the visuals on theme change
   useEffect(() => {
@@ -89,8 +86,10 @@ export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => 
   }, [theme])
 
   return (
-    <ThemeContext.Provider value={{ theme, mode, setMode }}>
+    <ThemeContext.Provider value={{ theme, mode, setTheme, setMode }}>
       {props.children}
     </ThemeContext.Provider>
   )
 }
+
+export const useTheme = () => React.useContext(ThemeContext);
