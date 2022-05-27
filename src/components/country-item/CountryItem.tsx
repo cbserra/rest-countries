@@ -1,4 +1,5 @@
-import { Country } from '../../Country'
+import { Country } from '../../utils/CountryTypes'
+import { getFlagImage } from '../../utils/Functions'
 import './CountryItem.css'
 
 const CountryItem = (props: {country: Country, setSelectedCountry: any}) => {
@@ -6,7 +7,7 @@ const CountryItem = (props: {country: Country, setSelectedCountry: any}) => {
     
     return (
         <div className='country-item' onClick={() => props.setSelectedCountry(country)}>
-            <img src={country.flag} alt="flag" />
+            <img src={getFlagImage(country)} alt="flag" />
             <div className='text-wrapper'>
                 <h1>{country.name}</h1>
                 <ul>

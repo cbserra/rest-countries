@@ -8,11 +8,13 @@ const Header = () => {
 
     return (
         <header>
-            <h1>Where in the world?</h1>
-            <DarkModeToggler 
-                theme={theme}
-                setMode={setMode}
-            />
+            <div className='header-width-wrapper'>
+                <h1>Where in the world?</h1>
+                <DarkModeToggler 
+                    theme={theme}
+                    setMode={setMode}
+                />
+            </div>
         </header>
     )
 }

@@ -8,11 +8,11 @@ const DarkModeToggler = (props: {theme: Theme, setMode: (mode: Mode) => void }) 
 
     return (
         <div className="dark-light-toggle">
-                <span className={`dark-mode`} onClick={() => setMode(theme === 'dark' ? 'light' : 'dark')}>
-                    <i className={`${theme === 'dark' ? 'fa-solid' : 'fa-regular'} fa-moon`}></i>
-                    Dark Mode
-                </span>
-            </div>
+            <span className={`dark-mode`} onClick={() => setMode(theme === 'dark' ? 'light' : 'dark')}>
+                <i className={`${theme === 'dark' ? 'fa-solid' : 'fa-regular'} fa-moon`}></i>
+                Dark Mode
+            </span>
+        </div>
     )
 }
 

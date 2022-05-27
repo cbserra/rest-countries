@@ -1,4 +1,4 @@
-import { CountryOption } from "../../Country"
+import { CountryOption } from "../../utils/CountryTypes"
 import FilterDropdown from "../filter-dropdown/FilterDropdown"
 import Search from "../search/Search"
 import './Inputs.css'

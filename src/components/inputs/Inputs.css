@@ -1,14 +1,16 @@
 .inputs-container {
     display: flex;
+    width: 100%;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
 
     .inputs-container {
-        width: 90%;
+
         align-items: flex-start;
         justify-content: space-between;
-        margin-block: 50px;
+        margin-block: 3rem;
+        /* padding-inline: 1rem; */
     }
 
     .inputs-filter {
@@ -17,21 +19,21 @@
 
 }
 
-@media (max-width: 899px) {
+@media (max-width: 999px) {
     .inputs-container {
-        align-items: center;
+        /* align-items: center; */
         justify-content: center;
         flex-direction: column;
     }
 
     .inputs-search {
-        margin-top: 24px;
-        margin-bottom: 16px;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .inputs-filter {
-        margin-top: 24px;
-        margin-bottom: 16px;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
 
 }

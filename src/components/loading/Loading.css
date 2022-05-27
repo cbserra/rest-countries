@@ -1,0 +1,12 @@
+.light div[data-testid="three-dots-loading"]>svg {
+    fill: var(--lm-text-very-dark-blue);
+}
+
+.dark div[data-testid="three-dots-loading"]>svg {
+    fill: var(--dm-text-lm-elements-white);
+}
+
+div[data-testid="three-dots-loading"]>svg {
+    height: 10rem;
+    width: 10rem;
+}

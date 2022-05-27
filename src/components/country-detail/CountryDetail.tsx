@@ -1,19 +1,30 @@
-import { Country } from '../../Country'
+import { Country } from '../../utils/CountryTypes'
+import { getFlagImage } from '../../utils/Functions'
 import BackButton from '../back-button/BackButton'
 import './CountryDetail.css'
 
-const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaNames: Record<string, string>}) => {
+const CountryDetail = (props: {
+    country: Country, 
+    alphaNames: Record<string, Country>
+    prevSelectedCountries: Country[],
+    setSelectedCountry: any,
+    setPrevSelectedCountries: any
+}) => {
     const country = props.country
     const alphaNames = props.alphaNames
+    const setSelectedCountry = props.setSelectedCountry
+    const setPrevSelectedCountries = props.setPrevSelectedCountries
 
     return (
         <div className='country-detail-container'>
             <BackButton 
-                setSelectedCountry={props.setSelectedCountry} 
+                prevSelectedCountries={props.prevSelectedCountries}
+                setSelectedCountry={props.setSelectedCountry}
+                setPrevSelectedCountries={props.setPrevSelectedCountries}
             />
             <div className='country-detail'>
                 <div className='country-detail-flag'>
-                    <img src={country.flag} alt='flag' />
+                    <img src={getFlagImage(country)} alt='flag' />
                 </div>
                
                 <div className='country-detail-text'>
@@ -66,7 +77,17 @@ const CountryDetail = (props: {country: Country, setSelectedCountry: any, alphaN
                     {country.borders?.length > 0 && (
                         <div className='borders'>
                             <h2>Border Countries:</h2>
-                            {country.borders?.map((border, index) => <span key={index} className='border-value'>{alphaNames[border]}</span>)}
+                            {country.borders?.map((border, index) => <span 
+                                                                        key={index} 
+                                                                        className='border-value' 
+                                                                        onClick={() => {
+                                                                            setPrevSelectedCountries((prevValues: Country[]) => [...prevValues, country])
+                                                                            setSelectedCountry(() => alphaNames[border])
+                                                                        }}
+                                                                     >
+                                                                         {alphaNames[border].name}
+                                                                     </span>
+                                                )}
                         </div>
                     )}
                 </div>

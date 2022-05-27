@@ -1,7 +1,7 @@
 div.dark-light-toggle {
     font-weight: 600;
     margin-left: auto;
-    margin-right: 10%;
+    /* margin-right: 10%; */
 }
 
 div.dark-light-toggle span {
@@ -13,12 +13,23 @@ div.dark-light-toggle span i {
     margin: 10px;
 }
 
+span.dark-mode i.fa-moon.fa-regular {
+    transform: rotateY(180deg);
+    transition: transform 1s linear;
+}
+
+span.dark-mode i.fa-moon.fa-solid {
+    transform: rotateY(0deg);
+    transition: transform 1s linear;
+    /* transform: rotateY(180deg); */
+}
+
 @media (min-width: 701px) {
 
     div.dark-light-toggle {
         font-size: 1rem;
         line-height: 1.375rem;
-        margin-right: 4rem;
+        /* margin-right: 4rem; */
     }
 }
 

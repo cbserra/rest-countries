@@ -1,6 +1,6 @@
 import Select, { components, ControlProps } from 'react-select'
 import './Search.css'
-import { CountryOption } from '../../Country'
+import { CountryOption } from '../../utils/CountryTypes'
 
 const Search = (props : {countryNames: CountryOption[], setSelectedCountry: any}) => {
 

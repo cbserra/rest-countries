@@ -1,14 +1,14 @@
-.light .country-detail-container button {
+.light .back-button {
     background: var(--dm-text-lm-elements-white);
     color: var(--lm-text-very-dark-blue);
 }
 
-.dark .country-detail-container button {
+.dark .back-button {
     background: var(--dm-elements-dark-blue);
     color: var(--dm-text-lm-elements-white);
 }
 
-.country-detail-container button {
+.back-button {
     margin-top: 25px;
     margin-right: auto;
     margin-bottom: 25px;
@@ -18,7 +18,7 @@
 }
 
 @media (min-width: 701px) {
-    .country-detail-container button {
+    .back-button {
         font-size: 1rem;
         line-height: 1.25rem;
         width: 8.5rem;
@@ -30,7 +30,7 @@
 
 @media (max-width: 700px) {
 
-    .country-detail-container button {
+    .back-button {
         width: 6.5rem;
         height: 2rem;
         font-size: .875rem;

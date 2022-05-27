@@ -16,7 +16,6 @@ const getMode = (): Promise<Mode> =>
       );
     }, 3000)
   );
-const saveMode = async (mode: Mode): Promise<void> => {};
 
 // exposed context for doing awesome things directly in React
 export const ThemeContext = createContext<{
@@ -48,7 +47,6 @@ export const ThemeProvider: React.FunctionComponent<Props> = (props : Props) => 
   // When the mode changes, save it to the localStorage and to the database
   useEffect(() => {
     localStorage.setItem(localStorageKey, mode);
-    saveMode(mode);
   }, [mode]);
 
   const [theme, setTheme] = useState<Theme>(() => {

@@ -83,7 +83,7 @@
 }
 
 /* View Dependent  */
-@media (max-width: 899px) {
+@media (max-width: 999px) {
     .filter-dropdown {
         height: 3rem;
         font-size: .75rem;
@@ -95,7 +95,7 @@
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
     .filter-dropdown {
         height: 3.5rem;
         font-size: .875rem;
