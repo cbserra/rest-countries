@@ -38,20 +38,8 @@ const Main  = () => {
                     toggleIsLoading(false)
                 }, 1000)
             })
-        }, 2000)
+        }, 1000)
       }, []);
-
-    // useEffect(() => {
-    //     fetch('https://restcountries.com/v2/all')
-    //     .then(resp => resp.json())
-    //     .then(data => {
-    //         let countryData:Country[] = data
-    //         setCountries(countryData)
-    //         setFilteredCountries(countryData)
-
-    //         toggleIsLoading(prevValue => !prevValue)
-    //     })
-    // }, [])
 
     /**
      * Creates a collection of `string => Country` options, and populates the state
