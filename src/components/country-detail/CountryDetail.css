@@ -31,8 +31,7 @@
 }
 
 .country-detail-flag {
-    width: 100%;
-    /* width: 35rem; */
+    width: 100%;    
 }
 
 .country-detail-flag img {
@@ -47,7 +46,6 @@
 
 .country-detail-text {
     width: 100%;
-    /* width: 35rem; */
 }
 
 .country-detail-text h1 {
@@ -129,6 +127,14 @@ span.border-value {
 
     .borders {
         grid-area: borders;
+    }
+
+    .country-detail {
+        flex-direction: row;
+    }
+
+    .country-detail-flag {
+        width: 35rem;
     }
 
     .country-detail-text {

@@ -7,14 +7,22 @@ const DarkModeToggler = () => {
 
     return (
         <div className="dark-light-toggle">
-            <span className={`dark-mode`} 
-                onClick={(e) => {
-                    setTheme(theme === "light" ? "dark" : "light");
-                    setMode(theme === 'dark' ? 'light' : 'dark');
-            }}>
+            <label className='theme-type-label' htmlFor="theme-type">
+                <input 
+                    className='theme-type-check'
+                    type="checkbox" 
+                    name="themeType" 
+                    id="theme-type"
+                    onChange={(e) => {
+                        const toggledThemeMode = theme === "light" ? "dark" : "light"
+                        setTheme(toggledThemeMode)
+                        setMode(toggledThemeMode)
+                        console.log(`checked = ${e.target.checked}`)
+                    }}
+                     />
                 <i className={`${theme === 'dark' ? 'fa-solid' : 'fa-regular'} fa-moon`}></i>
                 Dark Mode
-            </span>
+            </label>
         </div>
     )
 }

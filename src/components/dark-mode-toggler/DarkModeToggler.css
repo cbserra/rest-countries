@@ -1,4 +1,4 @@
-div.dark-light-toggle {
+.dark-light-toggle {
     font-size: .75rem;
     line-height: 1rem;
     font-weight: 600;
@@ -6,24 +6,28 @@ div.dark-light-toggle {
     /* margin-right: 10%; */
 }
 
-div.dark-light-toggle span {
+.theme-type-label {
     cursor: pointer;
     margin: 10px;
 }
 
-div.dark-light-toggle span i {
+.theme-type-label i {
     margin: 10px;
 }
 
-span.dark-mode i.fa-moon.fa-regular {
+.theme-type-label i.fa-moon.fa-regular {
     transform: rotateY(180deg);
     transition: transform 1s linear;
 }
 
-span.dark-mode i.fa-moon.fa-solid {
+.theme-type-label i.fa-moon.fa-solid {
     transform: rotateY(0deg);
     transition: transform 1s linear;
     /* transform: rotateY(180deg); */
+}
+
+.theme-type-check {
+    opacity: 0;
 }
 
 @media (min-width: 701px) {
