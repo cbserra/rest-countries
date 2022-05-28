@@ -1,25 +1,25 @@
 export interface Country {
     "name": string,
     "topLevelDomain": string[],
-    "alpha2Code": string,
+    // "alpha2Code": string,
     "alpha3Code": string,
-    "callingCodes": string[],
+    // "callingCodes": string[],
     "capital": string,
-    "altSpellings": string[],
+    // "altSpellings": string[],
     "region": string,
     "subregion"?: string,
     "continent": string,
     "population": number,
-    "latlng": [
-        number, number
-    ],
-    "demonym": string,
-    "area": number,
-    "gini": number,
-    "timezones": string[],
-    "borders": string[],
+    // "latlng": [
+    //     number, number
+    // ],
+    // "demonym": string,
+    // "area": number,
+    // "gini": number,
+    // "timezones": string[],
+    "borders"?: string[],
     "nativeName": string,
-    "numericCode": string,
+    // "numericCode": string,
     "currencies": [
         {
         "code": string,
@@ -35,41 +35,41 @@ export interface Country {
         "nativeName": string
         }
     ],
-    "translations": {
-        "br": string,
-        "pt": string,
-        "nl": string,
-        "hr": string,
-        "fa": string,       
-        "de": string,
-        "es": string,
-        "fr": string,
-        "ja": string,      
-        "it": string,
-        "hu": string,    
-    },
+    // "translations": {
+    //     "br": string,
+    //     "pt": string,
+    //     "nl": string,
+    //     "hr": string,
+    //     "fa": string,       
+    //     "de": string,
+    //     "es": string,
+    //     "fr": string,
+    //     "ja": string,      
+    //     "it": string,
+    //     "hu": string,    
+    // },
     "flag": string,
     "flags": {
         "svg": string,
         "png": string
     },
-    "regionalBlocs": [
-        {
-        "acronym": string,
-        "name": string,
-        "otherNames": [
-            string
-        ]
-        },
-        {
-        "acronym": string,
-        "name": string,
-        "otherAcronyms": string[],
-        "otherNames": string[]
-        }
-    ],
-    "cioc": string,
-    "independent": boolean
+    // "regionalBlocs": [
+    //     {
+    //     "acronym": string,
+    //     "name": string,
+    //     "otherNames": [
+    //         string
+    //     ]
+    //     },
+    //     {
+    //     "acronym": string,
+    //     "name": string,
+    //     "otherAcronyms": string[],
+    //     "otherNames": string[]
+    //     }
+    // ],
+    // "cioc": string,
+    // "independent": boolean
 }
 
 export type CountryOption = {

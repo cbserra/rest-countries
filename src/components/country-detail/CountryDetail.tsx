@@ -74,20 +74,21 @@ const CountryDetail = (props: {
                         </ul>
                     </div>
                     
-                    {country.borders?.length > 0 && (
+                    {country.borders && country.borders.length > 0 && (
                         <div className='borders'>
                             <h2>Border Countries:</h2>
-                            {country.borders?.map((border, index) => <span 
-                                                                        key={index} 
-                                                                        className='border-value' 
-                                                                        onClick={() => {
-                                                                            setPrevSelectedCountries((prevValues: Country[]) => [...prevValues, country])
-                                                                            setSelectedCountry(() => alphaNames[border])
-                                                                        }}
-                                                                     >
-                                                                         {alphaNames[border].name}
-                                                                     </span>
-                                                )}
+                            {country.borders?.map((border, index) => 
+                                <span 
+                                    key={index} 
+                                    className='border-value' 
+                                    onClick={() => {
+                                        setPrevSelectedCountries((prevValues: Country[]) => [...prevValues, country])
+                                        setSelectedCountry(() => alphaNames[border])
+                                    }}
+                                    >
+                                        {alphaNames[border].name}
+                                    </span>
+                            )} 
                         </div>
                     )}
                 </div>

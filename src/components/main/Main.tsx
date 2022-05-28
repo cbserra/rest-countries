@@ -5,12 +5,19 @@ import CountryList from '../country-list/CountryList'
 import Inputs from '../inputs/Inputs'
 import './Main.css'
 import Loading from '../loading/Loading'
+import Error from '../error/Error'
+import useAxios from 'axios-hooks'
+import { AxiosError } from 'axios'
+
+export type CountriesOrUndef = Country[] | undefined
 
 const Main  = () => {
+    const restCountriesGetUrl = 'https://restcountries.com/v2/all?fields=name,topLevelDomain,alpha3Code,capital,region,subregion,population,borders,nativeName,currencies,languages,flag,flags'
+    const [{ data, loading, error }] = useAxios<CountriesOrUndef,boolean,AxiosError>(restCountriesGetUrl)
 
-    const [countries, setCountries] = useState<Country[]>([])
-    const [countryNames, setCountryNames] = useState<CountryOption[]>([])
-    const [filteredCountries, setFilteredCountries] = useState<Country[]>([])
+    const [countries, setCountries] = useState<CountriesOrUndef>([])
+    const [countryNames, setCountryNames] = useState<CountryOption[] | undefined>([])
+    const [filteredCountries, setFilteredCountries] = useState<CountriesOrUndef>([])
     const [loadedCountries, setLoadedCountries] = useState<Country[]>([])
 
     const [regions, setRegions] = useState<string[]>([])
@@ -18,70 +25,45 @@ const Main  = () => {
 
     const [selectedCountry, setSelectedCountry] = useState<Country>()
     const [prevSelectedCountries, setPrevSelectedCountries] = useState<Country[]>([])
+    
+    // For mapping 3-letter alpha country codes to country object, when rendering Country Borders.
     const [alpha3ToCountry, setAlpha3ToCountry] = useState<Record<string,Country>>({})
-
-    const [isLoading, toggleIsLoading] = useState<boolean>(true)
 
     /**
      * (Hopefully the) sole call to REST Countries API, to populate the `countries` state instance,
      * as well as the `filteredCountries` state instance.
      */
      useEffect(() => {
-        setTimeout(() => {
-            fetch('https://restcountries.com/v2/all')
-            .then(resp => resp.json())
-            .then(data => {
-                let countryData:Country[] = data
-                setCountries(countryData)
-                setFilteredCountries(countryData)
-    
-                setTimeout(() => {
-                    toggleIsLoading(false)
-                }, 0)
-            })
-        }, 0)
-      }, []);
+        setCountries(data)
+        setFilteredCountries(data)
+      }, [data]);
 
     /**
      * Creates a collection of `string => Country` options, and populates the state
      * so the dropdown menu will populate.
      */
     useEffect(() => {
-        let names = countries.map((country: Country) => { return { value: country, label: country.name }})
+        let names = countries?.map((country: Country) => { return { value: country, label: country.name }})
         setCountryNames(names)
-    }, [countries])
-    
-    /**
-     * Create a `Set` of unique Regions, extracted from `countries` object.
-     */
-    useEffect(() => {
 
-        let regions: string[] = Array.from(new Set(countries.map((country: { region: string }) => country.region)))
+        // Create a `Set` of unique Regions, extracted from `countries` object.
+        let regions: string[] = Array.from(new Set(countries?.map((country: { region: string }) => country.region)))
         setRegions(regions)
-   
-    }, [countries])
-
-    /**
-     * Creates a `Record<string, Country>`, in orer to do name-lookup while rendering the borders
-     * of the currently-selected Country.
-     */
-    useEffect(() => {
 
         // Create map of 3-letter alpha names => country name for use on country details
         let alphaNames : Record<string, Country> = {}
-        countries.forEach((country: Country) => { 
+        countries?.forEach((country: Country) => { 
             alphaNames[country.alpha3Code] = country 
         })
         setAlpha3ToCountry(alphaNames)
-
     }, [countries])
-
+    
     /**
      *  Build option list of Country names, and sets the `countryNames` state. 
      *  This occurs on initial load, and whenever the value of `filteredCountries` changes.
      */
     useEffect(() => {
-        let names = filteredCountries.map((country: Country) => { return { value: country, label: country.name }})
+        let names = filteredCountries?.map((country: Country) => { return { value: country, label: country.name }})
         setCountryNames(names)
     }, [filteredCountries])
 
@@ -91,7 +73,7 @@ const Main  = () => {
      */
     useEffect(() => {
         if (filteredRegion) {
-            setFilteredCountries(countries.filter(country => country.region === filteredRegion))
+            setFilteredCountries(countries?.filter(country => country.region === filteredRegion))
         } else {
             setFilteredCountries(countries)
         }
@@ -100,11 +82,11 @@ const Main  = () => {
     return (
         <main>
             <div className='main-width-wrapper'>
-                { isLoading && (
-                    <Loading />
-                )}
-
-                { !isLoading && selectedCountry && (
+                {  loading && (<Loading />) }
+                
+                { !loading && error && (<Error error={error} />)}
+                
+                { !loading && !error && selectedCountry && (
                     <CountryDetail 
                         country={selectedCountry} 
                         setSelectedCountry={setSelectedCountry} 
@@ -114,7 +96,7 @@ const Main  = () => {
                     />
                 )}
 
-                { !isLoading && !selectedCountry && countryNames && regions && (
+                { !loading && !error && !selectedCountry && countryNames && regions && (
                     <Inputs 
                         countryNames={countryNames} 
                         regions={regions} 
@@ -123,7 +105,7 @@ const Main  = () => {
                     />
                 )}
 
-                { !isLoading && !selectedCountry && filteredCountries && (
+                { !loading && !error && !selectedCountry && filteredCountries && (
                     <CountryList 
                         countries={filteredCountries} 
                         setSelectedCountry={setSelectedCountry}
