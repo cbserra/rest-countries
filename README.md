@@ -15,7 +15,6 @@ realistic projects.
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -49,48 +48,48 @@ Users should be able to:
 
 <details>
   <summary>Light</summary>
-  <img src="./screenshot-mobile-light.png" />
+  <img src="./screenshots/screenshot-mobile-light.png" />
 </details>
 
 <details>
   <summary>Dark</summary>
-  <img src="./screenshot-mobile-dark.png" />
+  <img src="./screenshots/screenshot-mobile-dark.png" />
 </details>
 
 #### Tablet-ish (2 columns)
 
 <details>
   <summary>Light</summary>
-  <img src="./screenshot-tab1-light.png" />
+  <img src="./screenshots/screenshot-tab1-light.png" />
 </details>
 
 <details>
   <summary>Dark</summary>
-  <img src="./screenshot-tab1-dark.png" />
+  <img src="./screenshots/screenshot-tab1-dark.png" />
 </details>
 
 #### Tablet-ish (3 columns)
 
 <details>
   <summary>Light</summary>
-  <img src="./screenshot-tab2-light.png" />
+  <img src="./screenshots/screenshot-tab2-light.png" />
 </details>
 
 <details>
   <summary>Dark</summary>
-  <img src="./screenshot-tab2-dark.png" />
+  <img src="./screenshots/screenshot-tab2-dark.png" />
 </details>
 
 #### Desktop
 
 <details>
   <summary>Light</summary>
-  <img src="./screenshot-desktop-light.png" />
+  <img src="./screenshots/screenshot-desktop-light.png" />
 </details>
 
 <details>
   <summary>Dark</summary>
-  <img src="./screenshot-desktop-dark.png" />
+  <img src="./screenshots/screenshot-desktop-dark.png" />
 </details>
 
 ### Links
@@ -120,64 +119,60 @@ I followed a few blog posts, discussing `useContext` hook and `createContext`. I
 - [Light/dark mode: React Implementation](https://dev.to/ayc0/light-dark-mode-react-implementation-3aoa#defining-the-context)
   - [Code Sandbox](https://codesandbox.io/s/themes-tbclf?file=/src/theme.tsx)
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+I really should learn about `Routes` in React, but in place of that, I used an array to 
+build 'history' of when a user clicks through the Borders to view other Countries, the array
+will allow them to go 'Back' through the countries they've visited:
 
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+// CountryDetail.tsx
+...
+<h2>Border Countries:</h2>
+{country.borders?.map((border, index) => 
+    <span 
+        key={index} 
+        className='border-value' 
+        onClick={() => {
+            setPrevSelectedCountries((prevValues: Country[]) => [...prevValues, country])
+            setSelectedCountry(() => alphaNames[border])
+        }}
+        >
+            {alphaNames[border].name}
+        </span>
+)} 
+...
+// BackButton.tsx
+...
+const BackButton = (props: { 
+    prevSelectedCountries: Country[],
+    setSelectedCountry: any,
+    setPrevSelectedCountries: any
+}) => {
+    return (
+        <button 
+            className='back-button' 
+            onClick={() => props.setSelectedCountry(props.prevSelectedCountries?.pop())}
+        >
+            <i className="fa-solid fa-arrow-left-long"></i>
+            &nbsp;Back
+        </button>
+    )
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out
-[The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace
- with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue
-focusing on in future projects. These could be concepts you're still not
-completely comfortable with or techniques you found useful that you want
-to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace
- with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
- I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article
-which helped me finally understand XYZ. I'd recommend it to anyone still
-learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped
- you during the challenge. These could come in handy for anyone viewing
- your solution or for yourself when you look back on this project in the future.**
+- Learn about 'Routes' in React
+- Caching, since the data we're requesting is unlikely to change regularly
+- CSS: Improve code efficiency. Improve Responsive Design implementation so
+it's less dependent on `@media` queries -- the layout should collapse and grow
+smoothly.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what
-links you'd like to share.**
+- GitHUb - [Chris Serra](https://www.github.com/cbserra)
+- Frontend Mentor - [@cbserra](https://www.frontendmentor.io/profile/cbserra)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on
-this project. Perhaps you worked in a team or got some inspiration
-from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary.
-If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thank you to the members of Frontend Mentor -- on both the site and Slack channel --
+for their feedback and contributions which have inspired my own solutions.
