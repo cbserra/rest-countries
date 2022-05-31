@@ -1,48 +1,42 @@
 .dark-light-toggle {
-    font-size: .75rem;
-    line-height: 1rem;
-    font-weight: 600;
-    margin-left: auto;
-    /* margin-right: 10%; */
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  margin-left: auto;
+  /* margin-right: 10%; */
 }
 
 .theme-type-label {
-    cursor: pointer;
-    margin: 10px;
+  cursor: pointer;
+  margin: 10px;
 }
 
 .theme-type-label i {
-    margin: 10px;
+  margin: 10px;
 }
 
 .theme-type-label i.fa-moon.fa-regular {
-    transform: rotateY(180deg);
-    transition: transform 1s linear;
+  transform: rotateY(180deg);
+  transition: transform 1s linear;
 }
 
 .theme-type-label i.fa-moon.fa-solid {
-    transform: rotateY(0deg);
-    transition: transform 1s linear;
-    /* transform: rotateY(180deg); */
+  transform: rotateY(0deg);
+  transition: transform 1s linear;
+}
+
+.theme-type-label span {
+  text-transform: capitalize;
+  text-align: left;
 }
 
 .theme-type-check {
-    opacity: 0;
+  opacity: 0;
 }
 
 @media (min-width: 701px) {
-
-    div.dark-light-toggle {
-        font-size: 1rem;
-        line-height: 1.375rem;
-        /* margin-right: 4rem; */
-    }
+  div.dark-light-toggle {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
 }
-
-/* @media (max-width: 700px) {
-
-    div.dark-light-toggle {
-        font-size: .75rem;
-        line-height: 1rem;
-    }
-} */

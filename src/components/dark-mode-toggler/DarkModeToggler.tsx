@@ -21,7 +21,7 @@ const DarkModeToggler = () => {
                     }}
                      />
                 <i className={`${theme === 'dark' ? 'fa-solid' : 'fa-regular'} fa-moon`}></i>
-                Dark Mode
+                <span>{theme} mode</span>
             </label>
         </div>
     )

@@ -1,68 +1,63 @@
 .dark .country-item {
-    background: var(--dm-elements-dark-blue);
-    color: var(--dm-text-lm-elements-white);
+  background: var(--dm-elements-dark-blue);
+  color: var(--dm-text-lm-elements-white);
 }
 
-/* .light .country-item {
-    background: var(--dm-text-lm-elements-white);
-    color: var(--lm-text-very-dark-blue);
-} */
-
 .text-wrapper {
-    margin: 25px;
+  margin: 25px;
 }
 
 .country-item {
-    background: var(--dm-text-lm-elements-white);
-    color: var(--lm-text-very-dark-blue);
-    padding-bottom: 25px;
-    border-radius: 0 0 5px 5px;
+  background: var(--dm-text-lm-elements-white);
+  color: var(--lm-text-very-dark-blue);
+  padding-bottom: 25px;
+  border-radius: 0 0 5px 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .country-item img {
-    border-radius: 5px 5px 0 0;
-    border: 1px solid var(--lm-text-very-dark-blue);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px 5px 0 0;
+  border: 1px solid var(--lm-text-very-dark-blue);
 }
 
 .country-item h1 {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-    text-align: left;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  text-align: left;
 }
 
 .country-item ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .country-item ul li {
-    text-align: left;
+  text-align: left;
 }
 
 .country-item ul li span {
-    font-style: normal;
-    font-size: .875rem;
-    line-height: 1.5rem;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 }
 
 span.key {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 span.value {
-    padding-left: .5rem;
-    font-weight: 300;
+  padding-left: 0.5rem;
+  font-weight: 300;
 }
 
 /* @media (max-width: 700px) { */
 .country-item img {
-    width: 265px;
-    height: 160px;
-    object-fit: cover;
+  width: 265px;
+  height: 160px;
+  object-fit: cover;
 }
 
 /* } */
